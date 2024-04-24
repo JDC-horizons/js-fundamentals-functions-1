@@ -10,11 +10,11 @@
 //
 // TODO: write code below
 
-function arrayBuilder(x, y) {
+function arrayBuilder(first, second) {
   const array = []
-  for (let i = x; i <= y; i++) {
-    array.push(x)
-  }
+  for (let i = first; i <= second; i++) (
+      array.push(i)
+  )
   return array
 }
 
@@ -46,18 +46,24 @@ function makeDramatic(string, num) {
 // '23:50', 30  | '00:20'
 // TODO: write code below
 
-function newTime(time, num) {
+function newTime(time, mins) {
   if (time.length === 4) {
     time = `0${time}`
   }
-  const startMins = +time.slice(3, 5)
-  const hoursInMins = +time.slice(0, 2) * 60 + startMins
-  const newMins = hoursInMins + num
-  let endTime = `${Math.floor(newMins / 60)}:${newMins % 60}`
-  if (endTime.charAt(endTime.length - 2) === ':') {
-    endTime = endTime + '0'
+  let hours = +time.slice(0, 2)
+  const totalMinutes = +time.slice(3, 5) + mins
+  let finalMinutes = totalMinutes % 60
+  hours = hours + ((totalMinutes - finalMinutes) / 60)
+  if (hours === 24) {
+    hours = '00'
+  } else if (hours > 24) {
+    hours -= 24
   }
-  return endTime
+  if (finalMinutes.toString().length ===1) {
+    finalMinutes = `0${finalMinutes}`
+  }
+  const finalTime = hours.toString() + ':' + finalMinutes.toString()
+  return finalTime
 }
 
 // TODO: change the exported value to be the name of the function you defined
