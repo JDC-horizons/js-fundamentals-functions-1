@@ -9,7 +9,8 @@
 // TODO: write code below
 
 function functionA(x) {
-  return x += 1
+  const result = (x += 1)
+  return result
 }
 
 // 2. Define a function that capitalises any string
@@ -24,10 +25,9 @@ function functionA(x) {
 // TODO: write code below
 
 function functionB(string) {
-  let capStr = string[0].toUpperCase() + string.slice(1)
+  const capStr = string[0].toUpperCase() + string.slice(1)
   return capStr
 }
-
 
 // 3. Define a function that takes any person's name and returns it with a smiley :)!
 // Remember to make the name capitalized!
@@ -41,10 +41,9 @@ function functionB(string) {
 // TODO: write code below
 
 function functionC(name) {
-  let capName = name[0].toUpperCase() + name.slice(1)
+  const capName = name[0].toUpperCase() + name.slice(1)
   return `Hi, ${capName} :)`
 }
-
 
 // 4. Define a function that takes an array of data and returns how many strings are in the array.
 //
@@ -68,7 +67,6 @@ function functionD(array) {
   return count
 }
 
-
 // 5. Define a function that takes an object and adds a property 'edward' to the object if it doesn't yet exist with a default value of 'amazing'
 //
 // Example Input and Output:
@@ -86,7 +84,6 @@ function functionE(object) {
   }
   return object
 }
-
 
 // TODO: change each undefined below to be the name of the functions you defined
 module.exports = {

@@ -11,8 +11,8 @@
 // TODO: write code below
 
 function arrayBuilder(x, y) {
-  let array = []
-  for (let = x; x <= y; x++) {
+  const array = []
+  for (let i = x; i <= y; i++) {
     array.push(x)
   }
   return array
@@ -50,16 +50,15 @@ function newTime(time, num) {
   if (time.length === 4) {
     time = `0${time}`
   }
-  let startMins = +time.slice(3, 5)
-  let hoursInMins = (+time.slice(0, 2) * 60) + startMins
-  let newMins = hoursInMins + num
-  let endTime = `${(Math.floor(newMins / 60))}:${newMins  % 60}`
+  const startMins = +time.slice(3, 5)
+  const hoursInMins = +time.slice(0, 2) * 60 + startMins
+  const newMins = hoursInMins + num
+  let endTime = `${Math.floor(newMins / 60)}:${newMins % 60}`
   if (endTime.charAt(endTime.length - 2) === ':') {
     endTime = endTime + '0'
   }
   return endTime
 }
-
 
 // TODO: change the exported value to be the name of the function you defined
 module.exports = {
